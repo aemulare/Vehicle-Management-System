@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Request class NHibernate mapping file.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="Request" table="dbo.requests">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+
+    <property name="_requestId" column="code" type="String" access="field"/>
+    <property name="_purpose" column="purpose" type="String" access="field"/>
+    <property name="_status" column="request_status" type="Request+RequestStatus" access="field"/>
+    <property name="_destination" column="destination" type="String" access="field"/>
+    <property name="_contentInventory" column="inventory_content" type="String" access="field"/>
+    <property name="_plannedTripStart" column="planned_trip_start" type="DateTime" access="field"/>
+    <property name="_plannedTripEnd" column="planned_trip_end" type="DateTime" access="field"/>
+    <property name="_forPersonalUse" column="for_personal_use" type="Boolean" access="field"/>
+    <property name="_submittedAt" column="submitted_at" type="DateTime" access="field"/>
+    <property name="_approvedAt" column="approved_at" type="DateTime" access="field"/>
+
+    <many-to-one name="_vehicle" column="vehicle_id" access="field" class="OwnedVehicle"
+      fetch="join" not-found="exception" cascade="none"/>
+    <many-to-one name="_driver" column="driver_id" access="field" class="UserAccount"
+      fetch="join" not-found="ignore" cascade="none"/>
+    <many-to-one name="_requestor" column="requestor_id" access="field" class="UserAccount"
+      fetch="join" not-found="exception" cascade="none"/>
+    <many-to-one name="_approver" column="approver_id" access="field" class="UserAccount"
+      fetch="join" not-found="ignore" cascade="none"/>
+
+    <bag name="_passengers" table="dbo.passengers" access="field" cascade="all">
+      <key column="request_id"/>
+      <many-to-many class="Person" column="person_id"/>
+    </bag>
+  </class>
+</hibernate-mapping>

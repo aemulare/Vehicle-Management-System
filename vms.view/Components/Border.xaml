@@ -1,0 +1,49 @@
+﻿<!--
+//=================================================================================================
+// Resource Dictionary.
+// Border styles.
+// Contains the set of WPF styles for Border control.
+//===-=============================================================================================
+-->
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- Main window border style. -->
+  <Style x:Key="MainWindowBorderStyle" TargetType="{x:Type Border}">
+    <Setter Property="CornerRadius" Value="15"/>
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FEFEFE" Offset="0"/>
+            <GradientStop Color="#FFF2FAFF" Offset="0.7"/>
+            <GradientStop Color="#FFDDE5EB" Offset="1"/>
+            <GradientStop Color="White" Offset="0.462"/>
+          </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+
+
+  <!-- Command panel border style. -->
+  <Style x:Key="CommandPanelBorderStyle" TargetType="{x:Type Border}">
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="CornerRadius" Value="15"/>
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FEFEFE" Offset="0"/>
+            <GradientStop Color="#F5FAFE" Offset="0.7"/>
+            <GradientStop Color="#C9D9E6" Offset="1"/>
+          </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

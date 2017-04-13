@@ -1,0 +1,140 @@
+﻿<Window x:Class="Vms.Views.VehiclePropertiesView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  Title="Vehicle Properties" Height="400" Width="700" Background="#f9f9f9"
+  WindowStartupLocation="CenterOwner" ShowInTaskbar="False" SnapsToDevicePixels="True"
+  WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <GroupBox Padding="10" Header="Vehicle Info" Margin="5">
+      <Grid>
+        <!-- Rows -->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Columns -->
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="50"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- VIN -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="VIN:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="150" Margin="5" MaxLength="17"
+          Text="{Binding VinNumber, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Year -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="year:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="50" Margin="5" HorizontalAlignment="Left" MaxLength="4"
+          Text="{Binding YearManufactured, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Maker -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="maker:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="100" Margin="5" HorizontalAlignment="Left" MaxLength="32"
+          Text="{Binding Maker, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Model -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="model:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Width="150" Margin="5" HorizontalAlignment="Left" MaxLength="64"
+          Text="{Binding VehicleModel, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Color -->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="color:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Width="100" Margin="5" HorizontalAlignment="Left" MaxLength="64"
+          Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Plate number -->
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="plate #" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="5" Grid.Column="1"  Width="100" Margin="5" HorizontalAlignment="Left" MaxLength="8"
+          Text="{Binding Plate, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Max Passengers -->
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="max passengers:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Width="100" Margin="5" HorizontalAlignment="Left" MaxLength="2"
+          Text="{Binding MaxPassengers, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}" IsEnabled="{Binding IsPassengerCar}"/>
+
+        <!-- Car type. -->
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="car type:" Margin="5" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="0" Grid.Column="4" Width="175" Margin="5"
+          ItemsSource="{Binding CarTypeValues}" SelectedItem="{Binding CarType}"/>
+
+        <!-- Transmission -->
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="transmission:" Margin="5" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="1" Grid.Column="4" Width="175" Margin="5" HorizontalAlignment="Left"
+          ItemsSource="{Binding TransmissionTypes, Mode=OneTime}" SelectedItem="{Binding Transmission}"/>
+
+        <!-- Swept Volume -->
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="engine size:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="4" Width="50" Margin="5" HorizontalAlignment="Left" MaxLength="4"
+          Text="{Binding EngineVolume, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Fuel type -->
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="fuel type:" Margin="5" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="3" Grid.Column="4" Width="175" Margin="5" HorizontalAlignment="Left"
+          ItemsSource="{Binding FuelTypes, Mode=OneTime}" SelectedItem="{Binding FuelType}"/>
+
+        <!-- Fuel tank capacity -->
+        <TextBlock Grid.Row="4" Grid.Column="3" Text="tank capacity:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="4" Width="50" Margin="5" HorizontalAlignment="Left" MaxLength="5"
+          Text="{Binding FuelTankCapacity, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- Mileage -->
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="mileage:" Margin="5" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="5" Grid.Column="4" Width="100" Margin="5" HorizontalAlignment="Left" MaxLength="10"
+          Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}"/>
+
+        <!-- GVM - Gross Vehicle Mass -->
+        <TextBlock Grid.Row="6" Grid.Column="3" Text="gross vehicle mass:" Margin="40,5,5,5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="6" Grid.Column="4" Width="50" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" MaxLength="5"
+          Text="{Binding GrossMass, UpdateSourceTrigger=PropertyChanged}"
+          Validation.ErrorTemplate="{StaticResource ErrorTemplate}" IsEnabled="{Binding IsCargoCar}"/>
+
+        <CheckBox Grid.Row="7" Grid.Column="1" Content="available for requests" Margin="5" IsChecked="{Binding IsAvailable}"/>
+      </Grid>
+    </GroupBox>
+
+    <Grid Grid.Row="1" Margin="5,5,5,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <StackPanel Orientation="Horizontal" Margin="5" IsEnabled="{Binding IsNew}">
+        <RadioButton Content="Passenger Car" Margin="5" VerticalContentAlignment="Center" IsChecked="{Binding IsPassengerCar}"/>
+        <RadioButton Content="Cargo Car" Margin="5" VerticalContentAlignment="Center" IsChecked="{Binding IsCargoCar}"/>
+        <RadioButton Content="Utility Car" Margin="5" VerticalContentAlignment="Center" IsChecked="{Binding IsUtilityCar}"/>
+      </StackPanel>
+      <Button x:Name="btSave" Grid.Column="2" Margin="5" Width="90" Content="Save" IsDefault="True"
+        Command="{Binding SaveCommand}"/>
+    </Grid>
+  </Grid>
+</Window>

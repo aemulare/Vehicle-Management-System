@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+Debug/
+ipch
+packages/
+*.opendb
+*.VC.db
+*.user
+*.sdf

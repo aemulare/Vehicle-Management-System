@@ -1,0 +1,138 @@
+﻿<!--
+//=================================================================================================
+// Resource Dictionary.
+// TextBox styles.
+// Contains the set of WPF styles for TextBox control (Aero theme for Windows).
+//===-=============================================================================================
+-->
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:aero="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:v="clr-namespace:Vms.Views">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/vms.view;component/Components/Brushes.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+
+	<!-- Text Box control template. -->
+	<ControlTemplate x:Key="TextBoxTemplate" TargetType="{x:Type TextBox}">
+		<Grid>
+			<aero:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}"
+				BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
+				RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}"
+				SnapsToDevicePixels="true">
+				<Grid>
+					<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+					<Border x:Name="WatermarkLabelElement" Background="White" IsHitTestVisible="False" Visibility="Collapsed" Opacity="0">
+            <!--
+						<TextBlock  x:Name="WatermarkLabel" VerticalAlignment="Center" Margin="2,0,0,0" FontFamily="{TemplateBinding FontFamily}"
+							Text="{Binding Path=(v:TextBoxExtensions.Watermark), RelativeSource={x:Static RelativeSource.TemplatedParent}}"
+							FontSize="{TemplateBinding FontSize}" Opacity="0.8"/>
+            -->
+					</Border>
+				</Grid>
+			</aero:ListBoxChrome>
+			<Grid x:Name="validationElement" Visibility="Collapsed" SnapsToDevicePixels="True">
+				<Grid HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0.5,2,0.5" Width="14" Height="14" Background="Transparent">
+					<Ellipse x:Name="validationEllipse" Stroke="#FFFFFFFF" Fill="{StaticResource ErrorValidationBrush}" StrokeThickness="0">
+						<Ellipse.Effect>
+							<DropShadowEffect BlurRadius="4" ShadowDepth="0" Color="#FF919191" Direction="90"/>
+						</Ellipse.Effect>
+					</Ellipse>
+					<TextBlock Text="!" FontWeight="Bold" Margin="0,0,0,2" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+						<TextBlock.Effect>
+							<DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="#FF685D5D"/>
+						</TextBlock.Effect>
+					</TextBlock>
+				</Grid>
+			</Grid>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsEnabled" Value="false">
+				<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+			</Trigger>
+<!--
+			<DataTrigger Binding="{Binding Path=(v:TextBoxExtensions.WatermarkEnabled), RelativeSource={x:Static RelativeSource.Self}}" Value="True">
+				<Setter Property="Visibility" TargetName="WatermarkLabelElement" Value="Visible" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding Path=(v:TextBoxExtensions.OverlayText), RelativeSource={x:Static RelativeSource.Self}}" Value="True">
+				<Setter Property="Foreground" TargetName="WatermarkLabel" Value="Black" />
+				<Setter Property="FontWeight" TargetName="WatermarkLabel" Value="Bold"/>
+				<Setter Property="Opacity" TargetName="WatermarkLabel" Value="1" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding Path=(v:TextBoxExtensions.OverlayText), RelativeSource={x:Static RelativeSource.Self}}" Value="False">
+				<Setter Property="Foreground" TargetName="WatermarkLabel" Value="Gray" />
+				<Setter Property="FontWeight" TargetName="WatermarkLabel" Value="Normal"/>
+				<Setter Property="Opacity" TargetName="WatermarkLabel" Value="0.8" />
+			</DataTrigger>
+-->
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding Path=IsFocused, RelativeSource={x:Static RelativeSource.Self}}" Value="True" />
+				</MultiDataTrigger.Conditions>
+				<Setter Property="Opacity" TargetName="WatermarkLabelElement" Value="0" />
+			</MultiDataTrigger>
+<!--
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding Path=IsFocused, RelativeSource={x:Static RelativeSource.Self}}" Value="False" />
+					<Condition Binding="{Binding Path=(v:TextBoxExtensions.OverlayText), RelativeSource={x:Static RelativeSource.Self}}" Value="True" />
+				</MultiDataTrigger.Conditions>
+				<Setter Property="Opacity" TargetName="WatermarkLabelElement" Value="1" />
+			</MultiDataTrigger>
+-->
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding Path=IsFocused, RelativeSource={x:Static RelativeSource.Self}}" Value="False" />
+					<Condition Binding="{Binding Path=Text, RelativeSource={x:Static RelativeSource.Self}}" Value="{x:Static System:String.Empty}" />
+				</MultiDataTrigger.Conditions>
+				<Setter Property="Opacity" TargetName="WatermarkLabelElement" Value="1" />
+			</MultiDataTrigger>
+
+			<Trigger Property="IsReadOnly" Value="True">
+				<Setter Property="Background" Value="#FFF0F0F0"/>
+				<Setter Property="Background" TargetName="WatermarkLabelElement" Value="#FFF0F0F0"/>
+			</Trigger>
+			
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+
+
+
+	<!-- TextBox base style. -->
+	<Style x:Key="TextBoxBaseStyle" TargetType="{x:Type TextBox}">
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
+		<Setter Property="Margin" Value="0"/>
+		<Setter Property="FontFamily" Value="Calibri"/>
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="MaxLines" Value="1"/>
+		<Setter Property="MaxLength" Value="256"/>
+		<Setter Property="SelectionBrush" Value="#FF3399FF" />
+	</Style>
+
+
+
+	<!-- TextBox default style. -->
+	<Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxBaseStyle}">
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+		<Setter Property="AllowDrop" Value="true"/>
+		<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+		<Setter Property="Template" Value="{StaticResource TextBoxTemplate}"/>
+	</Style>
+
+</ResourceDictionary>

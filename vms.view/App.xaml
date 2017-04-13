@@ -1,0 +1,22 @@
+﻿<Application x:Class="Vms.Views.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:Vms.ViewModels"
+  StartupUri="Shell.xaml">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/vms.view;component/Components/CommonStyles.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/DataGrid.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/Button.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/TextBox.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/TextBlock.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/GroupBox.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/ComboBox.xaml"/>
+        <ResourceDictionary Source="/vms.view;component/Components/ErrorTemplate.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <vm:NavigationManager x:Key="NavigationManager"/>
+      <BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

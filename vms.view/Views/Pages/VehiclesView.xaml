@@ -1,0 +1,47 @@
+﻿<Page x:Class="Vms.Views.VehiclesView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:Vms.ViewModels">
+
+  <Page.DataContext>
+    <vm:VehiclesController/>
+  </Page.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBlock Text="Vehicles" Margin="8,8,8,0" FontSize="15" Foreground="SteelBlue"/>
+
+    <DataGrid Grid.Row="1" Margin="5" IsReadOnly="true" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Category" Width="110" Binding="{Binding VehicleCategory}"/>
+        <DataGridTextColumn Header="Type" Width="110" Binding="{Binding CarType}"/>
+        <DataGridTextColumn Header="Make" Width="110" Binding="{Binding Maker}"/>
+        <DataGridTextColumn Header="Model" Width="160" Binding="{Binding VehicleModel}"/>
+        <DataGridTextColumn Header="Year" Width="60" Binding="{Binding YearManufactured}"/>
+        <DataGridTextColumn Header="Max Passengers" Width="100" Binding="{Binding MaxPassengers}"/>
+        <DataGridTextColumn Header="Plate" Width="100" Binding="{Binding Plate}"/>
+        <DataGridCheckBoxColumn Header="Available" Width="60" Binding="{Binding IsAvailable, Mode=OneWay}"/>
+      </DataGrid.Columns>
+      <DataGrid.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="New Request..." Command="{Binding NewRequestCommand}"/>
+          <Separator/>
+          <MenuItem Header="New Vehicle..." Command="{Binding CreateItemCommand}"/>
+          <MenuItem Header="Edit Vehicle..." Command="{Binding EditItemCommand}"/>
+          <MenuItem Header="Delete Vehicle" Command="{Binding DeleteItemCommand}"/>
+        </ContextMenu>
+      </DataGrid.ContextMenu>
+    </DataGrid>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,5,10,10">
+      <Button Margin="5" Content="New..." Command="{Binding CreateItemCommand}" ToolTip="Click here to add a new vehicle"/>
+      <Button Margin="5" Content="Edit..." Command="{Binding EditItemCommand}" ToolTip="Click here to edit the selected vehicle properties"/>
+      <Button Margin="5" Content="Delete" Command="{Binding DeleteItemCommand}" ToolTip="Click here to delete the selected vehicle"/>
+    </StackPanel>
+  </Grid>
+</Page>

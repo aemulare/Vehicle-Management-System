@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  NHibernate mapping file for Trip model.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="Trip" table="dbo.trips">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+
+    <property name="_startedAt" column="started_at" type="DateTime" access="field"/>
+    <property name="_finishedAt" column="finished_at" type="DateTime" access="field"/>
+    <property name="_mileage" column="mileage" type="Double" access="field"/>
+    <property name="_fuelCost" column="fuel_cost" type="Double" access="field"/>
+
+    <many-to-one name="_request" column="request_id" access="field" class="Request"
+      fetch="join" not-found="exception" cascade="none"/>
+  </class>
+</hibernate-mapping>

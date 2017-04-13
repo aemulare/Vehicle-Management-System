@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vehicle class NHibernate mapping file.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="OwnedVehicle" table="dbo.vehicles" discriminator-value="0">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+    <discriminator column="car_type" type="Byte"/>
+
+    <property name="_vin" column="vin" type="String" access="field"/>
+    <property name="_maker" column="maker" type="String" access="field"/>
+    <property name="_model" column="model" type="String" access="field"/>
+    <property name="_fuelType" column="fuel_type" type="vms.Vehicle+FuelType, vms.model" access="field"/>
+    <property name="_transmission" column="transmission" type="vms.Vehicle+Transmission, vms.model" access="field"/>
+    <property name="_yearManufactured" column="year_manufactured" type="Int32" access="field"/>
+    <property name="_sweptVolume" column="swept_volume" type="Double" access="field"/>
+    <property name="_fuelTankCapacity" column="fuel_tank_capacity" type="Double" access="field"/>
+    <property name="_color" column="color" type="String" access="field"/>
+    <property name="_plate" column="plate" type="String" access="field"/>
+    <property name="_mileage" column="mileage" type="Double" access="field"/>
+    <property name="_isAvailable" column="is_available" type="Boolean" access="field"/>
+
+    <subclass name="PassengerCar" discriminator-value="0">
+      <property name="_maxPassengers" column="max_passengers" type="Int32" access="field"/>
+      <property name="_passCarType" column="car_subtype" type="vms.PassengerCar+PassengerCarType, vms.model" access="field"/>
+    </subclass>
+    <subclass name="CargoCar" discriminator-value="1">
+      <property name="_cargoType" column="car_subtype" type="vms.CargoCar+CargoCarType, vms.model" access="field"/>
+      <property name="_grossVehicleMass" column="gross_mass" type="Int32" access="field"/>
+    </subclass>
+    <subclass name="UtilityCar" discriminator-value="2">
+      <property name="_utilityCarType" column="car_subtype" type="vms.UtilityCar+UtilityCarType, vms.model" access="field"/>
+    </subclass>
+  </class>
+</hibernate-mapping>

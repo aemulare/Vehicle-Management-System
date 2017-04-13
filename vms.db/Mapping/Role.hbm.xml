@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  NHibernate mapping file for the role class hierarchy.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="Employee" table="dbo.roles" discriminator-value="0" mutable="false">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+    <discriminator column="role_type" type="Byte"/>
+    <property name="_roleName" column="role_name" type="String" access="field"/>
+
+    <subclass name="Administrator" discriminator-value="1">
+    </subclass>
+
+    <subclass name="Manager" discriminator-value="2">
+    </subclass>
+
+    <subclass name="GarageAttendant" discriminator-value="3">
+    </subclass>
+  </class>
+</hibernate-mapping>

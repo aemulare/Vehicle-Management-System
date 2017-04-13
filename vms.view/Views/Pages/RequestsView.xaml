@@ -1,0 +1,56 @@
+﻿<Page x:Class="Vms.Views.RequestsView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:Vms.ViewModels">
+
+  <Page.DataContext>
+    <vm:RequestsController/>
+  </Page.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBlock Text="All Requests" Margin="8,8,8,0" FontSize="15" Foreground="SteelBlue"/>
+
+    <DataGrid Grid.Row="1" Margin="5" IsReadOnly="true" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Request ID" Width="140" Binding="{Binding RequestId}"/>
+        <DataGridTextColumn Header="Status" Width="100" Binding="{Binding Status}"/>
+        <DataGridTextColumn Header="Submitted" Width="150" Binding="{Binding SubmittedAt}"/>
+        <DataGridTextColumn Header="Requestor" Width="120" Binding="{Binding RequestorName}"/>
+        <DataGridTextColumn Header="Approved" Width="150" Binding="{Binding ApprovedAt}"/>
+        <DataGridTextColumn Header="Approver" Width="120" Binding="{Binding ApproverName}"/>
+        <DataGridTextColumn Header="Category" Width="100" Binding="{Binding Vehicle.CarType}"/>
+        <DataGridTextColumn Header="Plate" Width="100" Binding="{Binding Vehicle.Plate}"/>
+      </DataGrid.Columns>
+      <DataGrid.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="New Request..." Command="{Binding CreateItemCommand}"/>
+          <MenuItem Header="Edit Request..." Command="{Binding EditItemCommand}"/>
+          <MenuItem Header="View Request..." Command="{Binding ViewItemCommand}"/>
+          <MenuItem Header="Delete Request" Command="{Binding DeleteItemCommand}"/>
+          <Separator Visibility="{Binding AllowApproveDecline, Converter={StaticResource boolToVisibilityConverter}}"/>
+          <MenuItem Header="Approve Request" Command="{Binding ApproveRequestCommand}"
+            Visibility="{Binding AllowApproveDecline, Converter={StaticResource boolToVisibilityConverter}}"/>
+          <MenuItem Header="Decline Request" Command="{Binding DeclineRequestCommand}"
+            Visibility="{Binding AllowApproveDecline, Converter={StaticResource boolToVisibilityConverter}}"/>
+        </ContextMenu>
+      </DataGrid.ContextMenu>
+    </DataGrid>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,5,10,10">
+      <Button Margin="5" Content="New..." Command="{Binding CreateItemCommand}" ToolTip="Click here to add a new request"/>
+      <Button Margin="5" Content="Edit..." Command="{Binding EditItemCommand}" ToolTip="Click here to edit the selected request"/>
+      <Button Margin="5" Content="View..." Command="{Binding ViewItemCommand}" ToolTip="Click here to view the selected request"/>
+      <Button Margin="5" Content="Delete" Command="{Binding DeleteItemCommand}" ToolTip="Click here to delete the selected request"/>
+      <Button Margin="5" Content="Approve" Command="{Binding ApproveRequestCommand}" ToolTip="Click here to approve the selected request"
+        Visibility="{Binding AllowApproveDecline, Converter={StaticResource boolToVisibilityConverter}}"/>
+      <Button Margin="5" Content="Decline" Command="{Binding DeclineRequestCommand}" ToolTip="Click here to decline the selected request"
+        Visibility="{Binding AllowApproveDecline, Converter={StaticResource boolToVisibilityConverter}}"/>
+    </StackPanel>
+  </Grid>
+</Page>

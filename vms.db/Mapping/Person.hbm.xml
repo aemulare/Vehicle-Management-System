@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Person class NHibernate mapping file.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="Person" table="dbo.persons">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+
+    <property name="_firstName" column="first_name" type="String" access="field"/>
+    <property name="_lastName" column="last_name" type="String" access="field"/>
+    <property name="_dob" column="dob" type="DateTime" access="field"/>
+    <property name="_driverLicense" column="driver_license" type="String" access="field"/>
+    <property name="_insurance" column="insurance" type="String" access="field"/>
+    <property name="_phoneNumber" column="phone_number" type="String" access="field"/>
+    <property name="_email" column="email" type="String" access="field"/>
+
+    <component name="_address" class="Address" access="field">
+      <property name="_streetAddress1" column="street_address_1" type="String" access="field"/>
+      <property name="_streetAddress2" column="street_address_2" type="String" access="field"/>
+      <property name="_city" column="city" type="String" access="field"/>
+      <property name="_state" column="us_state" type="String" access="field"/>
+      <property name="_zip" column="zip" type="String" access="field"/>
+    </component>
+  </class>
+</hibernate-mapping>

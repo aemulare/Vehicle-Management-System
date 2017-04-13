@@ -1,0 +1,22 @@
+﻿<!--
+//=================================================================================================
+// Resource Dictionary.
+// GroupBox styles.
+// Contains the set of WPF styles for GroupBox control.
+//===-=============================================================================================
+-->
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- GroupBox default style. -->
+  <Style TargetType="{x:Type GroupBox}">
+    <Setter Property="BorderBrush" Value="DarkGray"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="SnapsToDevicePixels" Value="True"/>
+    <Setter Property="Foreground" Value="SteelBlue"/>
+    <Setter Property="FontFamily" Value="Calibri"/>
+    <Setter Property="FontSize" Value="13"/>
+  </Style>
+
+</ResourceDictionary>

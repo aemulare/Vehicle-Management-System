@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UserAccount class NHibernate mapping file.
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="vms" assembly="vms.model" default-lazy="false">
+  <class name="UserAccount" table="dbo.user_accounts">
+    <id name="_id" column="id" access="field">
+      <generator class="identity"/>
+    </id>
+
+    <property name="_userId" column="user_account_id" type="String" access="field"/>
+    <property name="_password" column="user_password" type="String" access="field"/>
+    <property name="_locked" column="is_locked" type="Boolean" access="field"/>
+
+    <many-to-one name="_person" column="person_id" access="field" class="Person"
+      fetch="join" not-found="exception" cascade="all"/>
+
+    <many-to-one name="_role" column="role_id" access="field" class="Employee"
+      fetch="join" not-found="exception" cascade="none"/>
+  </class>
+</hibernate-mapping>
