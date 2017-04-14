@@ -36,6 +36,13 @@ Desktop GUI application with MS SQL Server database.
 <br>
 <br>
 
+## UML Class Diagram
+
+![uml](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
+
+<br>
+<br>
+
 ## Screen shots
 
 ![landing-page](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-01-Main-page.png)
