@@ -35,6 +35,7 @@ Desktop GUI application with MS SQL Server database.
 
 <br>
 <br>
+
 ## Screen shots
 
 ![landing-page](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-01-Main-page.png)
