@@ -26,7 +26,9 @@ who, when, for what purpose, for how long run the particular car.
 
 Desktop GUI application with MS SQL Server database.
 
-#### Business process infographics
+## 
+<p align="center">
+  <b>SBusiness process infographics</b><br>
 
 ![alt tag](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-Process.png)
 
