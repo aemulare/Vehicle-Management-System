@@ -38,8 +38,6 @@ Desktop GUI application with MS SQL Server database.
 
 ## UML Class Diagram
 
-[Full UML Class Diagram here](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
-
 Classes | Enumerations
 ------------ | -------------
 [Address](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Address.h) | [AgeCategory](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/Person.h)
@@ -59,6 +57,10 @@ Classes | Enumerations
 [Vehicle](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Vehicle.h) | 
 [PersistentEntity](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/PersistentEntity.h) | 
 
+<br>
+<br>
+
+[Full UML Class Diagram](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
 
 <br>
 <br>
@@ -66,6 +68,7 @@ Classes | Enumerations
 ## Screen shots
 
 ![landing-page](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-01-Main-page.png)
+
 
 ## Author
 
