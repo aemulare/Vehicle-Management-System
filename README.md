@@ -28,7 +28,7 @@ Desktop GUI application with MS SQL Server database.
 
 ## 
 <p align="center">
-  <b>SBusiness process infographics</b><br>
+  ## <b>Business process infographics</b><br>
 
 ![alt tag](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-Process.png)
 
