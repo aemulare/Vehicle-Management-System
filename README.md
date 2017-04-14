@@ -38,7 +38,26 @@ Desktop GUI application with MS SQL Server database.
 
 ## UML Class Diagram
 
-![uml](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
+[Full UML Class Diagram](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
+
+List of classes:
+* Address
+* Administrator
+* CargoCar
+* Employee
+* GarageAttendant
+* Manager
+* OwnedVehicle
+* PassengerCar
+* Person
+* Request
+* Role
+* Trip
+* UserAccount
+* UtilityCar
+* Vehicle
+* PersistentEntity
+
 
 <br>
 <br>
