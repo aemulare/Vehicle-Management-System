@@ -69,6 +69,8 @@ Classes | Enumerations
 
 ![landing-page](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-01-Main-page.png)
 
+![users](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-02-Users.png)
+
 
 ## Author
 
