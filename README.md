@@ -28,11 +28,11 @@ Desktop GUI application with MS SQL Server database.
 
 
 
-
+<br>
 <h2 align="center">Business process infographics</h2>
 
 
-<img src="https://github.com/aemulare/Vehicle-Management-System/blob/master/doc/VMS-Process.png" alt="process" style="width: 250px;"/>
+![alt tag](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-Process.png)
 
 
 ## Screen shots
