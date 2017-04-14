@@ -77,6 +77,7 @@ Classes | Enumerations
 
 ![trips](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS-screen-shots/VMS-08-Trips.png)
 
+[More screen shots](https://github.com/aemulare/Vehicle-Management-System/tree/master/doc/VMS-screen-shots)
 
 
 ## Author
