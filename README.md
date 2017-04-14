@@ -40,23 +40,24 @@ Desktop GUI application with MS SQL Server database.
 
 [Full UML Class Diagram here](https://raw.githubusercontent.com/aemulare/Vehicle-Management-System/master/doc/VMS_UML_class_diagram.png)
 
-List of classes:
-* [Address](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Address.h)
-* [Administrator](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Administrator.h)
-* [CargoCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/CargoCar.h)
-* [Employee](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Employee.h)
-* [GarageAttendant](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/GarageAttendant.h)
-* [Manager](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Manager.h)
-* [OwnedVehicle](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/OwnedVehicle.h)
-* [PassengerCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/PassengerCar.h)
-* [Person](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Person.h)
-* [Request](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Request.h)
-* [Role](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Role.h)
-* [Trip](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Trip.h)
-* [UserAccount](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/UserAccount.h)
-* [UtilityCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/UtilityCar.h)
-* [Vehicle](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Vehicle.h)
-* [PersistentEntity](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/PersistentEntity.h)
+Classes | Enumerations
+------------ | -------------
+[Address](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Address.h) | [AgeCategory](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/Person.h)
+[Administrator](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Administrator.h) | [RequestStatus](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/Request.h)
+[CargoCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/CargoCar.h) | [FuelType](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/Vehicle.h)
+[Employee](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Employee.h) | [Transmission](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/Vehicle.h)
+[GarageAttendant](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/GarageAttendant.h) | [PassengerCarType](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/PassengerCar.h)
+[Manager](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Manager.h) | [CargoCarType](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/CargoCar.h)
+[OwnedVehicle](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/OwnedVehicle.h) | [UtilityCarType](https://github.com/aemulare/Vehicle-Management-System/blob/7331c716a748ace8bed6bbc1cb565eb8bfb80e71/vms.model/UtilityCar.h)
+[PassengerCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/PassengerCar.h) |
+[Person](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Person.h) |
+[Request](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Request.h) | 
+[Role](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Role.h) | 
+[Trip](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Trip.h) | 
+[UserAccount](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/UserAccount.h) | 
+[UtilityCar](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/UtilityCar.h) | 
+[Vehicle](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/Vehicle.h) | 
+[PersistentEntity](https://github.com/aemulare/Vehicle-Management-System/blob/master/vms.model/PersistentEntity.h) | 
 
 
 <br>
