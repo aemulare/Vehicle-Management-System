@@ -17,7 +17,7 @@ go
 
 insert into dbo.user_accounts (user_account_id, user_password, role_id, person_id)
   values
-  ('Blonde-Bombshell', 'normajeane26', 2, 1),
+  ('Blonde', 'admin', 2, 1),
   ('Atticus', 'Mockingbird16', 3, 2),
   ('Aud', 'Moonriver29', 1, 3),
   ('Bobo', 'Misery48', 1, 4),

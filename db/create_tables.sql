@@ -1,4 +1,4 @@
-:setvar path "C:\Users\Maryika\Documents\CSC330 Software Design\CSC330_Project_VMS\db\"
+:setvar path "C:\Users\Maryika\Documents\GITHUB_CUNY\Project_VMS\db\"
 :r $(path)\002_create_vehicles.sql
 :r $(path)\003_create_persons.sql
 :r $(path)\004_create_roles.sql
